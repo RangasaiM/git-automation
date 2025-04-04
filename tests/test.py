@@ -8,13 +8,14 @@ from solutions.solution import Solution
 
 
 def run_test(grid, expected, test_num):
-    sol = Solution()
-    result = sol.numIslands(grid)
+    sol = Solution()  # Create an instance of the Solution class
+    result = sol.numIslands(grid)  # Call the numIslands method
     print(f"Test Case {test_num}: ", end="")
     if result == expected:
         print(f"PASSED ✅ (Output: {result})")
     else:
         print(f"FAILED ❌ (Output: {result}, Expected: {expected})")
+
 
 if __name__ == "__main__":
     test_cases = [

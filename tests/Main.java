@@ -1,6 +1,8 @@
 
-import java.util.*;
 import solutions.Solution;
+
+import java.util.Arrays;
+import java.util.List;
 
 public class Main {
         private static void runTest(char[][] grid, int expected, int testNum) {
@@ -15,9 +17,11 @@ public class Main {
         }
 
         public static void main(String[] args) {
+                // Create a large grid of all '1's
                 char[][] largeGrid = new char[50][50];
-                for (int i = 0; i < 50; i++)
+                for (int i = 0; i < 50; i++) {
                         Arrays.fill(largeGrid[i], '1');
+                }
 
                 List<Object[]> testCases = Arrays.asList(
                                 new Object[] { new char[][] {
@@ -67,8 +71,8 @@ public class Main {
                                                 { '0', '1', '0', '1' }
                                 }, 8 },
 
-                                new Object[] { new char[][] {}, 0 } // Empty grid case
-                );
+                                // Handle the empty grid case correctly
+                                new Object[] { new char[][] {}, 0 });
 
                 for (int i = 0; i < testCases.size(); i++) {
                         char[][] grid = (char[][]) testCases.get(i)[0];
