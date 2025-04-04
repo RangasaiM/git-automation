@@ -2,7 +2,7 @@ import sys
 import os
 
 # Add the solution folder to the Python path
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__),"..")))
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'solutions')))
 
 from solutions.Solution import Solution
 
