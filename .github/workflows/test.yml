@@ -88,7 +88,7 @@ jobs:
         run: |
           javac -d . solutions/Solution.java tests/Main.java
           echo "Running Java Test Cases..."
-          java -cp tests Test | tee test_results.log
+          java tests.Main | tee test_results.log
 
       - name: Upload Test Results
         if: always()
