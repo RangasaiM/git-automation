@@ -86,7 +86,7 @@ jobs:
       - name: Compile and Run Java Tests
         if: env.LANGUAGE == 'Java'
         run: |
-          javac tests/Main.java
+          javac -d . solutions/Solution.java tests/Main.java
           echo "Running Java Test Cases..."
           java -cp tests Test | tee test_results.log
 
