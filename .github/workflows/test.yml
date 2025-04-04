@@ -86,9 +86,10 @@ jobs:
       - name: Compile and Run Java Tests
         if: env.LANGUAGE == 'Java'
         run: |
-          javac tests/Main.java
+          mkdir -p out
+          javac -d out solutions/*.java tests/Main.java
           echo "Running Java Test Cases..."
-          java -cp . Main  | tee test_results.log
+          java -cp out Main | tee test_results.log
 
       - name: Upload Test Results
         if: always()
