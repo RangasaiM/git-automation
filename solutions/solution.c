@@ -6,7 +6,7 @@ void bfs(int rows, int cols, char grid[rows][cols], bool visited[rows][cols], in
 {
     int queue[rows * cols][2];
     int front = 0, rear = 0;
-
+    // this
     queue[rear][0] = i;
     queue[rear][1] = j;
     rear++;
