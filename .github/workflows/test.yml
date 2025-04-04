@@ -87,7 +87,7 @@ jobs:
         if: env.LANGUAGE == 'Java'
         run: |
           mkdir -p out
-          javac -d out solutions/*.java tests/Main.java
+          javac -d out $(find solutions -name "*.java") $(find tests -name "*.java")
           echo "Running Java Test Cases..."
           java -cp out Main | tee test_results.log
 
