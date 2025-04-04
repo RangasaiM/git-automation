@@ -2,6 +2,8 @@ package solutions;
 
 import java.util.*;
 
+//code
+
 public class Solution {
     private void bfs(boolean[][] visited, char[][] grid, int i, int j, int m, int n) {
         Queue<int[]> queue = new LinkedList<>();
