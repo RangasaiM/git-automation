@@ -69,10 +69,9 @@ public class Main {
                                                 { '0', '1', '0', '1' },
                                                 { '1', '0', '1', '0' },
                                                 { '0', '1', '0', '1' }
-                                }, 8 },
+                                }, 8 }
 
-                                // Handle the empty grid case correctly
-                                new Object[] { new char[][] {}, 0 });
+                );
 
                 for (int i = 0; i < testCases.size(); i++) {
                         char[][] grid = (char[][]) testCases.get(i)[0];
