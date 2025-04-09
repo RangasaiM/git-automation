@@ -11,11 +11,11 @@ void runTest(vector<vector<char>> grid, int expected, int testNum)
     cout << "Test Case " << testNum << ": ";
     if (result == expected)
     {
-        cout << "PASSED ✅ (Output: " << result << ")\n";
+        cout << "PASSED ✅ (Output: " << result << ")" << endl;
     }
     else
     {
-        cout << "FAILED ❌ (Output: " << result << ", Expected: " << expected << ")\n";
+        cout << "FAILED ❌ (Output: " << result << ", Expected: " << expected << ")" << endl;
     }
 }
 
