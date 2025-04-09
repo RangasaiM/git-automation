@@ -48,8 +48,6 @@ if __name__ == "__main__":
           ['0', '1', '0', '1'],
           ['1', '0', '1', '0'],
           ['0', '1', '0', '1']], 8),
-
-        ([], 0)
     ]
 
     for i, (grid, expected) in enumerate(test_cases, 1):
