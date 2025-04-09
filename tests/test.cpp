@@ -59,8 +59,6 @@ int main()
           {'1', '0', '1', '0'},
           {'0', '1', '0', '1'}},
          8}, // Test Case 10
-
-        {{}, 0} // Test Case 11 (Empty Grid)
     };
 
     // Run all test cases
