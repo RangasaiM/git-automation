@@ -30,7 +30,7 @@ public:
     }
     int numIslands(vector<vector<char>> &grid)
     {
-        // write your code here
+        // write your code  here
         int n = grid.size();
         int m = grid[0].size();
         vector<vector<bool>> vis(n, vector<bool>(m, false));
