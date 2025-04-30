@@ -5,6 +5,8 @@ import java.util.List;
 
 public class Main {
 
+    private static boolean anyTestFailed = false;
+
     private static void runTest(char[][] grid, int expected, int testNum) {
         Solution sol = new Solution(); // Create Solution object here
         int result = sol.numIslands(grid);
@@ -13,6 +15,7 @@ public class Main {
             System.out.println("PASSED ✅ (Output: " + result + ")");
         } else {
             System.out.println("FAILED ❌ (Output: " + result + ", Expected: " + expected + ")");
+            anyTestFailed = true;
         }
     }
 
@@ -72,17 +75,14 @@ public class Main {
             }, 8 }
         );
 
-        boolean failed = false;
-
         for (int i = 0; i < testCases.size(); i++) {
             char[][] grid = (char[][]) testCases.get(i)[0];
             int expected = (int) testCases.get(i)[1];
             runTest(grid, expected, i + 1);
-            // No need to compare again here, runTest already does it
         }
 
         // If any test failed, exit with status 1 to indicate failure
-        if (failed) {
+        if (anyTestFailed) {
             System.out.println("\n❌ Some test cases failed.");
             System.exit(1); // Exit with failure status
         } else {
