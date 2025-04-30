@@ -6,7 +6,7 @@ class Solution
 public:
     int numIslands(vector<vector<char>> &grid)
     {
-        // write your code here.cpp
+        // write your code here
         return 0;
     }
 };
