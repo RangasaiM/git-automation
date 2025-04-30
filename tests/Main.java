@@ -6,7 +6,7 @@ import java.util.List;
 public class Main {
 
     private static void runTest(char[][] grid, int expected, int testNum) {
-        Solution sol = new Solution();
+        Solution sol = new Solution(); // Create Solution object here
         int result = sol.numIslands(grid);
         System.out.print("Test Case " + testNum + ": ");
         if (result == expected) {
@@ -78,10 +78,7 @@ public class Main {
             char[][] grid = (char[][]) testCases.get(i)[0];
             int expected = (int) testCases.get(i)[1];
             runTest(grid, expected, i + 1);
-            // If any test fails, mark the failed status
-            if (expected != (sol.numIslands(grid))) {
-                failed = true;
-            }
+            // No need to compare again here, runTest already does it
         }
 
         // If any test failed, exit with status 1 to indicate failure
