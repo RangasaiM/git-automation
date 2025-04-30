@@ -8,13 +8,15 @@ from solutions.solution import Solution
 
 
 def run_test(grid, expected, test_num):
-    sol = Solution()  # Create an instance of the Solution class
-    result = sol.numIslands(grid)  # Call the numIslands method
+    sol = Solution()
+    result = sol.numIslands(grid)
     print(f"Test Case {test_num}: ", end="")
     if result == expected:
         print(f"PASSED ✅ (Output: {result})")
+        return False  # Not failed
     else:
         print(f"FAILED ❌ (Output: {result}, Expected: {expected})")
+        return True  # Test failed
 
 
 if __name__ == "__main__":
@@ -50,5 +52,15 @@ if __name__ == "__main__":
           ['0', '1', '0', '1']], 8),
     ]
 
+    failed = False
+
     for i, (grid, expected) in enumerate(test_cases, 1):
-        run_test(grid, expected, i)
+        if run_test(grid, expected, i):
+            failed = True
+
+    if failed:
+        print("\n❌ Some test cases failed.")
+        sys.exit(1)
+    else:
+        print("\n✅ All test cases passed.")
+        sys.exit(0)
