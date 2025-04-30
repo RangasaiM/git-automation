@@ -97,4 +97,18 @@ int main()
     failed |= runTest(3, 3, grid4, 0, 4);
     failed |= runTest(4, 4, grid5, 8, 5);
     failed |= runTest(2, 5, grid6, 2, 6);
-    failed |= runTest(5,
+    failed |= runTest(5, 5, grid7, 3, 7);
+    failed |= runTest(50, 50, largeGrid, 1, 8);
+    failed |= runTest(1, 5, grid8, 3, 9);
+    failed |= runTest(5, 1, grid9, 3, 10);
+    failed |= runTest(10, 10, grid13, 50, 11);
+
+    if (failed)
+    {
+        printf("Some test cases failed.\n");
+        return 1;
+    }
+
+    printf("All test cases passed.\n");
+    return 0;
+}
