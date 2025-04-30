@@ -26,46 +26,60 @@ int main()
           {'1', '1', '0', '0', '0'},
           {'0', '0', '1', '0', '0'},
           {'0', '0', '0', '1', '1'}},
-         3}, // Test Case 1
+         3},
 
-        {{{'1', '0', '1', '0', '1'}}, 3}, // Test Case 2
+        {{{'1', '0', '1', '0', '1'}}, 3},
 
-        {{{'1'}, {'0'}, {'1'}, {'1'}, {'0'}}, 2}, // Test Case 3
+        {{{'1'}, {'0'}, {'1'}, {'1'}, {'0'}}, 2},
 
         {{{'1', '1', '1'},
           {'1', '1', '1'},
           {'1', '1', '1'}},
-         1}, // Test Case 4
+         1},
 
         {{{'0', '0', '0'},
           {'0', '0', '0'},
           {'0', '0', '0'}},
-         0}, // Test Case 5
+         0},
 
-        {{{'1'}}, 1}, // Test Case 6
+        {{{'1'}}, 1},
 
-        {{{'0'}}, 0}, // Test Case 7
+        {{{'0'}}, 0},
 
         {{{'1', '0', '1', '1', '0'},
           {'1', '0', '1', '1', '0'},
           {'0', '0', '0', '0', '1'},
           {'1', '1', '0', '1', '1'}},
-         4}, // Test Case 8
+         4},
 
-        {vector<vector<char>>(50, vector<char>(50, '1')), 1}, // Test Case 9
+        {vector<vector<char>>(50, vector<char>(50, '1')), 1},
 
         {{{'1', '0', '1', '0'},
           {'0', '1', '0', '1'},
           {'1', '0', '1', '0'},
           {'0', '1', '0', '1'}},
-         8}, // Test Case 10
+         8}
     };
+
+    int failed = 0;
 
     // Run all test cases
     for (size_t i = 0; i < testCases.size(); i++)
     {
-        runTest(testCases[i].first, testCases[i].second, i + 1);
+        Solution sol;
+        int result = sol.numIslands(testCases[i].first);
+        cout << "Test Case " << i + 1 << ": ";
+        if (result == testCases[i].second)
+        {
+            cout << "PASSED ✅ (Output: " << result << ")" << endl;
+        }
+        else
+        {
+            cout << "FAILED ❌ (Output: " << result << ", Expected: " << testCases[i].second << ")" << endl;
+            failed++;
+        }
     }
 
-    return 0;
+    return failed > 0 ? 1 : 0; // 👈 Return non-zero if any test fails
 }
+
