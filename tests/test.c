@@ -7,6 +7,7 @@ extern int numIslands(char **grid, int gridSize, int *gridColSize);
 void runTest(int rows, int cols, char grid[rows][cols], int expected, int testNum)
 {
     printf("Test Case %d: ", testNum);
+    fflush(stdout);  // Force printing in GitHub CI
 
     // Dynamically allocate memory for grid
     char **dynamicGrid = (char **)malloc(rows * sizeof(char *));
@@ -19,8 +20,12 @@ void runTest(int rows, int cols, char grid[rows][cols], int expected, int testNu
         }
     }
 
-    int gridColSize = cols;
-    int result = numIslands(dynamicGrid, rows, &gridColSize);
+    // Create array of column sizes
+    int *gridColSize = (int *)malloc(rows * sizeof(int));
+    for (int i = 0; i < rows; i++)
+        gridColSize[i] = cols;
+
+    int result = numIslands(dynamicGrid, rows, gridColSize);
 
     if (result == expected)
     {
@@ -35,6 +40,7 @@ void runTest(int rows, int cols, char grid[rows][cols], int expected, int testNu
     for (int i = 0; i < rows; i++)
         free(dynamicGrid[i]);
     free(dynamicGrid);
+    free(gridColSize);
 }
 
 int main()
